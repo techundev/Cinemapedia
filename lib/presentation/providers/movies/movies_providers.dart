@@ -7,5 +7,12 @@ final nowPlayingMoviesProvider =
     });
 
 class MoviesNotifier extends StateNotifier<List<Movie>> {
+  int currentPage = 0;
   MoviesNotifier() : super([]);
+
+  Future<void> loadNextPage() async {
+    currentPage++;
+    
+    final List<Movie> movies = 
+  }
 }
