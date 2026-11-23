@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 class MoviesSlideshow extends StatelessWidget {
   final List<Movie> movies;
 
-  const MoviesSlideshow({
-    super.key,
-    required this.movies,
-  });
+  const MoviesSlideshow({super.key, required this.movies});
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +15,13 @@ class MoviesSlideshow extends StatelessWidget {
       height: 210,
       width: double.infinity,
       child: Swiper(
+        itemBuilder: (context, index) => _Slide(movie: movies[index]),
+        autoplay: true,
         itemCount: movies.length,
-        itemBuilder: (context, index) => _Slide(
-          movie: movies[index],
-        ),
+        scrollDirection: Axis.horizontal,
         viewportFraction: 0.8,
         scale: 0.9,
-        autoplay: true,
-        loop: false, // Evita el desplazamiento infinito
+        loop: false,
       ),
     );
   }
