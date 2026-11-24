@@ -67,7 +67,6 @@ app.*.map.json
 # Secretos y configuración local (NUNCA subir)
 # --------------------------------------------------------------
 .env
-.env.*
 !.env.example
 *.env
 secrets.json
